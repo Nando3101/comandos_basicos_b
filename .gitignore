@@ -1,0 +1,7 @@
+
+
+.vscode/
+.ps_Store
+.env
+*.log
+.*bag
