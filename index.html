@@ -1,1047 +1,1211 @@
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
-  <head>
-    <meta charset="utf-8" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+<head>
 
-    <meta name="description" content="" />
+  <meta charset="utf-8">
 
-    <meta
-      name="author"
-      content="Mark Otto, Jacob Thornton, and Bootstrap contributors"
-    />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <meta name="generator" content="Astro v5.13.2" />
+  <meta name="description" content="">
 
-    <title>FISEI - Universidad Técnica de Ambato</title>
+  <meta
+    name="author"
+    content="Mark Otto, Jacob Thornton, and Bootstrap contributors"
+  >
 
-    <link
-      rel="canonical"
-      href="https://getbootstrap.com/docs/5.3/examples/carousel/"
-    />
+  <meta name="generator" content="Astro v5.13.2">
 
-    <script src="./assets/js/color-modes.js"></script>
+  <title>FISEI - Universidad Técnica de Ambato</title>
 
-    <link
-      href="./assets/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
+  <link
+    rel="canonical"
+    href="https://getbootstrap.com/docs/5.3/examples/carousel/"
+  >
 
-    <meta name="theme-color" content="#712cf9" />
+  <script src="./assets/js/color-modes.js"></script>
 
-    <link
-      href="carousel.css"
-      rel="stylesheet"
-    />
+  <link
+    href="./assets/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
 
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
+  <meta
+    name="theme-color"
+    content="#712cf9"
+  >
+
+  <link
+    href="carousel.css"
+    rel="stylesheet"
+  >
+
+  <style>
+
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
       }
+    }
 
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
+    .b-example-divider {
+      width: 100%;
+      height: 3rem;
+      background-color: #0000001a;
+      border: solid rgba(0, 0, 0, 0.15);
+      border-width: 1px 0;
+      box-shadow:
+        inset 0 0.5em 1.5em #0000001a,
+        inset 0 0.125em 0.5em #00000026;
+    }
 
-      .b-example-divider {
-        width: 100%;
-        height: 3rem;
-        background-color: #0000001a;
-        border: solid rgba(0, 0, 0, 0.15);
-        border-width: 1px 0;
+    .b-example-vr {
+      flex-shrink: 0;
+      width: 1.5rem;
+      height: 100vh;
+    }
 
-        box-shadow:
-          inset 0 0.5em 1.5em #0000001a,
-          inset 0 0.125em 0.5em #00000026;
-      }
+    .bi {
+      vertical-align: -0.125em;
+      fill: currentColor;
+    }
 
-      .b-example-vr {
-        flex-shrink: 0;
-        width: 1.5rem;
-        height: 100vh;
-      }
+    .nav-scroller {
+      position: relative;
+      z-index: 2;
+      height: 2.75rem;
+      overflow-y: hidden;
+    }
 
-      .bi {
-        vertical-align: -0.125em;
-        fill: currentColor;
-      }
+    .nav-scroller .nav {
+      display: flex;
+      flex-wrap: nowrap;
+      padding-bottom: 1rem;
+      margin-top: -1px;
+      overflow-x: auto;
+      text-align: center;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+    }
 
-      .nav-scroller {
-        position: relative;
-        z-index: 2;
-        height: 2.75rem;
-        overflow-y: hidden;
-      }
+    .btn-bd-primary {
+      --bd-violet-bg: #712cf9;
+      --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
 
-      .nav-scroller .nav {
-        display: flex;
-        flex-wrap: nowrap;
-        padding-bottom: 1rem;
-        margin-top: -1px;
-        overflow-x: auto;
-        text-align: center;
-        white-space: nowrap;
-        -webkit-overflow-scrolling: touch;
-      }
+      --bs-btn-font-weight: 600;
+      --bs-btn-color: var(--bs-white);
+      --bs-btn-bg: var(--bd-violet-bg);
+      --bs-btn-border-color: var(--bd-violet-bg);
 
-      .btn-bd-primary {
-        --bd-violet-bg: #712cf9;
-        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+      --bs-btn-hover-color: var(--bs-white);
+      --bs-btn-hover-bg: #6528e0;
+      --bs-btn-hover-border-color: #6528e0;
 
-        --bs-btn-font-weight: 600;
-        --bs-btn-color: var(--bs-white);
-        --bs-btn-bg: var(--bd-violet-bg);
-        --bs-btn-border-color: var(--bd-violet-bg);
+      --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
 
-        --bs-btn-hover-color: var(--bs-white);
-        --bs-btn-hover-bg: #6528e0;
-        --bs-btn-hover-border-color: #6528e0;
+      --bs-btn-active-color: var(--bs-btn-hover-color);
+      --bs-btn-active-bg: #5a23c8;
+      --bs-btn-active-border-color: #5a23c8;
+    }
 
-        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+    .bd-mode-toggle {
+      z-index: 1500;
+    }
 
-        --bs-btn-active-color: var(--bs-btn-hover-color);
-        --bs-btn-active-bg: #5a23c8;
-        --bs-btn-active-border-color: #5a23c8;
-      }
+    .bd-mode-toggle .bi {
+      width: 1em;
+      height: 1em;
+    }
 
-      .bd-mode-toggle {
-        z-index: 1500;
-      }
+    .bd-mode-toggle .dropdown-menu .active .bi {
+      display: block !important;
+    }
 
-      .bd-mode-toggle .bi {
-        width: 1em;
-        height: 1em;
-      }
+    .imagen-carrera {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+    }
 
-      .bd-mode-toggle .dropdown-menu .active .bi {
-        display: block !important;
-      }
+  </style>
 
-      .imagen-carrera {
-        width: 100%;
-        height: 500px;
-        object-fit: cover;
-      }
-    </style>
-  </head>
+</head>
 
-  <body>
 
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      class="d-none"
+<body>
+
+
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    class="d-none"
+  >
+
+    <symbol
+      id="check2"
+      viewBox="0 0 16 16"
+    >
+      <path
+        d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"
+      >
+      </path>
+    </symbol>
+
+
+    <symbol
+      id="circle-half"
+      viewBox="0 0 16 16"
+    >
+      <path
+        d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"
+      >
+      </path>
+    </symbol>
+
+
+    <symbol
+      id="moon-stars-fill"
+      viewBox="0 0 16 16"
+    >
+      <path
+        d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"
+      >
+      </path>
+    </symbol>
+
+
+    <symbol
+      id="sun-fill"
+      viewBox="0 0 16 16"
+    >
+      <path
+        d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"
+      >
+      </path>
+    </symbol>
+
+  </svg>
+
+
+
+  <!-- CAMBIO DE TEMA -->
+
+  <div
+    class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle"
+  >
+
+    <button
+      class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
+      id="bd-theme"
+      type="button"
+      aria-expanded="false"
+      data-bs-toggle="dropdown"
+      aria-label="Toggle theme"
     >
 
-      <symbol
-        id="check2"
-        viewBox="0 0 16 16"
+      <svg
+        class="bi my-1 theme-icon-active"
+        aria-hidden="true"
       >
+        <use href="#circle-half"></use>
+      </svg>
 
-        <path
-          d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"
-        ></path>
-
-      </symbol>
-
-
-      <symbol
-        id="circle-half"
-        viewBox="0 0 16 16"
+      <span
+        class="visually-hidden"
+        id="bd-theme-text"
       >
+        Toggle theme
+      </span>
 
-        <path
-          d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"
-        ></path>
-
-      </symbol>
+    </button>
 
 
-      <symbol
-        id="moon-stars-fill"
-        viewBox="0 0 16 16"
-      >
+    <ul
+      class="dropdown-menu dropdown-menu-end shadow"
+      aria-labelledby="bd-theme-text"
+    >
 
-        <path
-          d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"
-        ></path>
+      <li>
+        <button
+          type="button"
+          class="dropdown-item d-flex align-items-center"
+          data-bs-theme-value="light"
+        >
 
-      </symbol>
+          <svg
+            class="bi me-2 opacity-50"
+            aria-hidden="true"
+          >
+            <use href="#sun-fill"></use>
+          </svg>
 
+          Light
 
-      <symbol
-        id="sun-fill"
-        viewBox="0 0 16 16"
-      >
-
-        <path
-          d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"
-        ></path>
-
-      </symbol>
-
-    </svg>
-
+        </button>
+      </li>
 
 
-    <!-- CAMBIO DE TEMA -->
+      <li>
+        <button
+          type="button"
+          class="dropdown-item d-flex align-items-center"
+          data-bs-theme-value="dark"
+        >
+
+          <svg
+            class="bi me-2 opacity-50"
+            aria-hidden="true"
+          >
+            <use href="#moon-stars-fill"></use>
+          </svg>
+
+          Dark
+
+        </button>
+      </li>
+
+
+      <li>
+        <button
+          type="button"
+          class="dropdown-item d-flex align-items-center active"
+          data-bs-theme-value="auto"
+        >
+
+          <svg
+            class="bi me-2 opacity-50"
+            aria-hidden="true"
+          >
+            <use href="#circle-half"></use>
+          </svg>
+
+          Auto
+
+        </button>
+      </li>
+
+    </ul>
+
+  </div>
+
+
+
+  <!-- NAVEGACIÓN -->
+
+  <header data-bs-theme="dark">
+
+    <nav
+      class="navbar navbar-expand-md navbar-dark fixed-top bg-dark"
+    >
+
+      <div class="container-fluid">
+
+        <a
+          class="navbar-brand"
+          href="#"
+        >
+          FISEI
+        </a>
+
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarCollapse"
+          aria-controls="navbarCollapse"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+
+          <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+
+        <div
+          class="collapse navbar-collapse"
+          id="navbarCollapse"
+        >
+
+          <ul
+            class="navbar-nav me-auto mb-2 mb-md-0"
+          >
+
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                href="#"
+              >
+                Inicio
+              </a>
+            </li>
+
+
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="#software"
+              >
+                Software
+              </a>
+            </li>
+
+
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="#industrial"
+              >
+                Industrial
+              </a>
+            </li>
+
+
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="#robotica"
+              >
+                Robótica
+              </a>
+            </li>
+
+
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="#biblioteca"
+              >
+                Biblioteca
+              </a>
+            </li>
+
+
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="#redes"
+              >
+                Préstamo de Redes
+              </a>
+            </li>
+
+
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="#secretaria"
+              >
+                Secretaría
+              </a>
+            </li>
+
+
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="#aso"
+              >
+                ASO FISEI
+              </a>
+            </li>
+
+          </ul>
+
+
+          <form
+            class="d-flex"
+            role="search"
+          >
+
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Buscar"
+              aria-label="Buscar"
+            >
+
+            <button
+              class="btn btn-outline-success"
+              type="submit"
+            >
+              Buscar
+            </button>
+
+          </form>
+
+        </div>
+
+      </div>
+
+    </nav>
+
+  </header>
+
+
+
+  <main>
+
+
+
+    <!-- CARRUSEL -->
 
     <div
-      class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle"
+      id="myCarousel"
+      class="carousel slide mb-6"
+      data-bs-ride="carousel"
     >
 
+
+      <div class="carousel-indicators">
+
+        <button
+          type="button"
+          data-bs-target="#myCarousel"
+          data-bs-slide-to="0"
+          class="active"
+          aria-current="true"
+          aria-label="Slide 1"
+        >
+        </button>
+
+
+        <button
+          type="button"
+          data-bs-target="#myCarousel"
+          data-bs-slide-to="1"
+          aria-label="Slide 2"
+        >
+        </button>
+
+
+        <button
+          type="button"
+          data-bs-target="#myCarousel"
+          data-bs-slide-to="2"
+          aria-label="Slide 3"
+        >
+        </button>
+
+      </div>
+
+
+
+      <div class="carousel-inner">
+
+
+        <!-- SLIDE 1 -->
+
+        <div class="carousel-item active">
+
+          <svg
+            aria-hidden="true"
+            class="bd-placeholder-img"
+            height="100%"
+            preserveAspectRatio="xMidYMid slice"
+            width="100%"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+
+            <rect
+              width="100%"
+              height="100%"
+              fill="var(--bs-secondary-color)"
+            >
+            </rect>
+
+          </svg>
+
+
+          <div class="container">
+
+            <div class="carousel-caption text-start">
+
+              <h1>
+                Facultad de Ingeniería en Sistemas, Electrónica e Industrial
+              </h1>
+
+              <p class="opacity-75">
+                Universidad Técnica de Ambato
+              </p>
+
+              <p>
+
+                <a
+                  class="btn btn-lg btn-primary"
+                  href="#software"
+                >
+                  Conocer las carreras
+                </a>
+
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- SLIDE 2 -->
+
+        <div class="carousel-item">
+
+          <svg
+            aria-hidden="true"
+            class="bd-placeholder-img"
+            height="100%"
+            preserveAspectRatio="xMidYMid slice"
+            width="100%"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+
+            <rect
+              width="100%"
+              height="100%"
+              fill="var(--bs-secondary-color)"
+            >
+            </rect>
+
+          </svg>
+
+
+          <div class="container">
+
+            <div class="carousel-caption">
+
+              <h1>
+                FISEI
+              </h1>
+
+              <p>
+                Formación académica en tecnología,
+                ingeniería, innovación y desarrollo.
+              </p>
+
+              <p>
+
+                <a
+                  class="btn btn-lg btn-primary"
+                  href="#industrial"
+                >
+                  Ver más
+                </a>
+
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- SLIDE 3 -->
+
+        <div class="carousel-item">
+
+          <svg
+            aria-hidden="true"
+            class="bd-placeholder-img"
+            height="100%"
+            preserveAspectRatio="xMidYMid slice"
+            width="100%"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+
+            <rect
+              width="100%"
+              height="100%"
+              fill="var(--bs-secondary-color)"
+            >
+            </rect>
+
+          </svg>
+
+
+          <div class="container">
+
+            <div class="carousel-caption text-end">
+
+              <h1>
+                Innovación y Tecnología
+              </h1>
+
+              <p>
+                Carreras orientadas al desarrollo tecnológico
+                y productivo del país.
+              </p>
+
+              <p>
+
+                <a
+                  class="btn btn-lg btn-primary"
+                  href="#robotica"
+                >
+                  Conocer más
+                </a>
+
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+
       <button
-        class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
-        id="bd-theme"
+        class="carousel-control-prev"
         type="button"
-        aria-expanded="false"
-        data-bs-toggle="dropdown"
-        aria-label="Toggle theme"
+        data-bs-target="#myCarousel"
+        data-bs-slide="prev"
       >
 
-        <svg
-          class="bi my-1 theme-icon-active"
+        <span
+          class="carousel-control-prev-icon"
           aria-hidden="true"
         >
-          <use href="#circle-half"></use>
-        </svg>
+        </span>
 
-        <span
-          class="visually-hidden"
-          id="bd-theme-text"
-        >
-          Toggle theme
+        <span class="visually-hidden">
+          Previous
         </span>
 
       </button>
 
 
-      <ul
-        class="dropdown-menu dropdown-menu-end shadow"
-        aria-labelledby="bd-theme-text"
+
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#myCarousel"
+        data-bs-slide="next"
       >
 
-        <li>
+        <span
+          class="carousel-control-next-icon"
+          aria-hidden="true"
+        >
+        </span>
 
-          <button
-            type="button"
-            class="dropdown-item d-flex align-items-center"
-            data-bs-theme-value="light"
-          >
+        <span class="visually-hidden">
+          Next
+        </span>
 
-            <svg
-              class="bi me-2 opacity-50"
-              aria-hidden="true"
-            >
-              <use href="#sun-fill"></use>
-            </svg>
-
-            Light
-
-          </button>
-
-        </li>
-
-
-        <li>
-
-          <button
-            type="button"
-            class="dropdown-item d-flex align-items-center"
-            data-bs-theme-value="dark"
-          >
-
-            <svg
-              class="bi me-2 opacity-50"
-              aria-hidden="true"
-            >
-              <use href="#moon-stars-fill"></use>
-            </svg>
-
-            Dark
-
-          </button>
-
-        </li>
-
-
-        <li>
-
-          <button
-            type="button"
-            class="dropdown-item d-flex align-items-center active"
-            data-bs-theme-value="auto"
-          >
-
-            <svg
-              class="bi me-2 opacity-50"
-              aria-hidden="true"
-            >
-              <use href="#circle-half"></use>
-            </svg>
-
-            Auto
-
-          </button>
-
-        </li>
-
-      </ul>
+      </button>
 
     </div>
 
 
 
-    <!-- NAVEGACIÓN -->
 
-    <header data-bs-theme="dark">
-
-      <nav
-        class="navbar navbar-expand-md navbar-dark fixed-top bg-dark"
-      >
-
-        <div class="container-fluid">
-
-          <a
-            class="navbar-brand"
-            href="#"
-          >
-            FISEI
-          </a>
-
-
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarCollapse"
-            aria-controls="navbarCollapse"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-
-            <span class="navbar-toggler-icon"></span>
-
-          </button>
-
-
-          <div
-            class="collapse navbar-collapse"
-            id="navbarCollapse"
-          >
-
-            <ul
-              class="navbar-nav me-auto mb-2 mb-md-0"
-            >
-
-              <li class="nav-item">
-
-                <a
-                  class="nav-link active"
-                  href="#"
-                >
-                  Inicio
-                </a>
-
-              </li>
-
-
-              <li class="nav-item">
-
-                <a
-                  class="nav-link"
-                  href="#software"
-                >
-                  Software
-                </a>
-
-              </li>
-
-
-              <li class="nav-item">
-
-                <a
-                  class="nav-link"
-                  href="#industrial"
-                >
-                  Industrial
-                </a>
-
-              </li>
-
-
-              <li class="nav-item">
-
-                <a
-                  class="nav-link"
-                  href="#robotica"
-                >
-                  Robótica
-                </a>
-
-              </li>
-
-
-              <li class="nav-item">
-
-                <a
-                  class="nav-link"
-                  href="#biblioteca"
-                >
-                  Biblioteca
-                </a>
-
-              </li>
-
-
-              <!-- NUEVO -->
-
-              <li class="nav-item">
-
-                <a
-                  class="nav-link"
-                  href="#redes"
-                >
-                  Préstamo de Redes
-                </a>
-
-              </li>
-
-            </ul>
-
-
-            <form
-              class="d-flex"
-              role="search"
-            >
-
-              <input
-                class="form-control me-2"
-                type="search"
-                placeholder="Buscar"
-                aria-label="Buscar"
-              />
-
-              <button
-                class="btn btn-outline-success"
-                type="submit"
-              >
-                Buscar
-              </button>
-
-            </form>
-
-          </div>
-
-        </div>
-
-      </nav>
-
-    </header>
+    <div class="container marketing">
 
 
 
-    <main>
+      <!-- SOFTWARE -->
 
+      <hr class="featurette-divider">
 
-
-      <!-- CARRUSEL -->
 
       <div
-        id="myCarousel"
-        class="carousel slide mb-6"
-        data-bs-ride="carousel"
+        class="row featurette"
+        id="software"
       >
 
+        <div class="col-md-7">
 
-        <div class="carousel-indicators">
+          <h2
+            class="featurette-heading fw-normal lh-1"
+          >
 
-          <button
-            type="button"
-            data-bs-target="#myCarousel"
-            data-bs-slide-to="0"
-            class="active"
-            aria-current="true"
-            aria-label="Slide 1"
-          ></button>
+            Carrera de Software.
 
-          <button
-            type="button"
-            data-bs-target="#myCarousel"
-            data-bs-slide-to="1"
-            aria-label="Slide 2"
-          ></button>
+            <span class="text-body-secondary">
+              Tecnología e innovación.
+            </span>
 
-          <button
-            type="button"
-            data-bs-target="#myCarousel"
-            data-bs-slide-to="2"
-            aria-label="Slide 3"
-          ></button>
-
-        </div>
+          </h2>
 
 
+          <p class="lead">
 
-        <div class="carousel-inner">
+            El Ingeniero de Software de la Universidad Técnica de Ambato
+            es un profesional capacitado para analizar, diseñar,
+            desarrollar, implementar y mantener soluciones de software
+            que respondan a las necesidades de organizaciones y de la
+            sociedad. Su formación le permite aplicar metodologías,
+            herramientas y tecnologías relacionadas con el desarrollo
+            de aplicaciones, bases de datos, sistemas de información,
+            programación y gestión de proyectos tecnológicos.
 
-
-          <!-- SLIDE 1 -->
-
-          <div class="carousel-item active">
-
-            <svg
-              aria-hidden="true"
-              class="bd-placeholder-img"
-              height="100%"
-              preserveAspectRatio="xMidYMid slice"
-              width="100%"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-
-              <rect
-                width="100%"
-                height="100%"
-                fill="var(--bs-secondary-color)"
-              ></rect>
-
-            </svg>
-
-
-            <div class="container">
-
-              <div class="carousel-caption text-start">
-
-                <h1>
-                  Facultad de Ingeniería en Sistemas, Electrónica e Industrial
-                </h1>
-
-                <p class="opacity-75">
-                  Universidad Técnica de Ambato
-                </p>
-
-                <p>
-
-                  <a
-                    class="btn btn-lg btn-primary"
-                    href="#software"
-                  >
-                    Conocer las carreras
-                  </a>
-
-                </p>
-
-              </div>
-
-            </div>
-
-          </div>
-
-
-
-          <!-- SLIDE 2 -->
-
-          <div class="carousel-item">
-
-            <svg
-              aria-hidden="true"
-              class="bd-placeholder-img"
-              height="100%"
-              preserveAspectRatio="xMidYMid slice"
-              width="100%"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-
-              <rect
-                width="100%"
-                height="100%"
-                fill="var(--bs-secondary-color)"
-              ></rect>
-
-            </svg>
-
-
-            <div class="container">
-
-              <div class="carousel-caption">
-
-                <h1>
-                  FISEI
-                </h1>
-
-                <p>
-                  Formación académica en tecnología,
-                  ingeniería, innovación y desarrollo.
-                </p>
-
-                <p>
-
-                  <a
-                    class="btn btn-lg btn-primary"
-                    href="#industrial"
-                  >
-                    Ver más
-                  </a>
-
-                </p>
-
-              </div>
-
-            </div>
-
-          </div>
-
-
-
-          <!-- SLIDE 3 -->
-
-          <div class="carousel-item">
-
-            <svg
-              aria-hidden="true"
-              class="bd-placeholder-img"
-              height="100%"
-              preserveAspectRatio="xMidYMid slice"
-              width="100%"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-
-              <rect
-                width="100%"
-                height="100%"
-                fill="var(--bs-secondary-color)"
-              ></rect>
-
-            </svg>
-
-
-            <div class="container">
-
-              <div class="carousel-caption text-end">
-
-                <h1>
-                  Innovación y Tecnología
-                </h1>
-
-                <p>
-                  Carreras orientadas al desarrollo tecnológico
-                  y productivo del país.
-                </p>
-
-                <p>
-
-                  <a
-                    class="btn btn-lg btn-primary"
-                    href="#robotica"
-                  >
-                    Conocer más
-                  </a>
-
-                </p>
-
-              </div>
-
-            </div>
-
-          </div>
+          </p>
 
         </div>
 
 
+        <div class="col-md-5">
 
-        <button
-          class="carousel-control-prev"
-          type="button"
-          data-bs-target="#myCarousel"
-          data-bs-slide="prev"
-        >
+          <img
+            src="images.jpg"
+            alt="Carrera de Software"
+            class="imagen-carrera featurette-image img-fluid mx-auto"
+            width="500"
+            height="500"
+          >
 
-          <span
-            class="carousel-control-prev-icon"
-            aria-hidden="true"
-          ></span>
-
-          <span class="visually-hidden">
-            Previous
-          </span>
-
-        </button>
-
-
-
-        <button
-          class="carousel-control-next"
-          type="button"
-          data-bs-target="#myCarousel"
-          data-bs-slide="next"
-        >
-
-          <span
-            class="carousel-control-next-icon"
-            aria-hidden="true"
-          ></span>
-
-          <span class="visually-hidden">
-            Next
-          </span>
-
-        </button>
-
+        </div>
 
       </div>
 
 
 
-      <div class="container marketing">
+
+      <!-- INDUSTRIAL -->
+
+      <hr class="featurette-divider">
 
 
+      <div
+        class="row featurette"
+        id="industrial"
+      >
 
-        <!-- SOFTWARE -->
+        <div class="col-md-7 order-md-2">
 
-        <hr class="featurette-divider" />
+          <h2
+            class="featurette-heading fw-normal lh-1"
+          >
 
+            Carrera Industrial.
 
-        <div
-          class="row featurette"
-          id="software"
-        >
+            <span class="text-body-secondary">
+              Producción y optimización.
+            </span>
 
-          <div class="col-md-7">
-
-            <h2
-              class="featurette-heading fw-normal lh-1"
-            >
-
-              Carrera de Software.
-
-              <span class="text-body-secondary">
-                Tecnología e innovación.
-              </span>
-
-            </h2>
+          </h2>
 
 
-            <p class="lead">
+          <p class="lead">
 
-              El Ingeniero de Software de la Universidad Técnica de Ambato
-              es un profesional capacitado para analizar, diseñar,
-              desarrollar, implementar y mantener soluciones de software
-              que respondan a las necesidades de organizaciones y de la
-              sociedad. Su formación le permite aplicar metodologías,
-              herramientas y tecnologías relacionadas con el desarrollo
-              de aplicaciones, bases de datos, sistemas de información,
-              programación y gestión de proyectos tecnológicos.
+            El Ingeniero Industrial de la Universidad Técnica de Ambato
+            es un profesional preparado para diseñar, gestionar,
+            implementar y optimizar sistemas productivos y de servicios.
+            Integra conocimientos relacionados con procesos,
+            producción, calidad, seguridad, logística y administración
+            de recursos, orientados al mejoramiento de la productividad
+            y competitividad de las organizaciones.
 
-            </p>
-
-          </div>
-
-
-          <div class="col-md-5">
-
-            <img
-              src="images.jpg"
-              alt="Carrera de Software"
-              class="imagen-carrera featurette-image img-fluid mx-auto"
-              width="500"
-              height="500"
-            />
-
-          </div>
+          </p>
 
         </div>
 
 
+        <div class="col-md-5 order-md-1">
 
-        <!-- INDUSTRIAL -->
-
-        <hr class="featurette-divider" />
-
-
-        <div
-          class="row featurette"
-          id="industrial"
-        >
-
-          <div class="col-md-7 order-md-2">
-
-            <h2
-              class="featurette-heading fw-normal lh-1"
-            >
-
-              Carrera Industrial.
-
-              <span class="text-body-secondary">
-                Producción y optimización.
-              </span>
-
-            </h2>
-
-
-            <p class="lead">
-
-              El Ingeniero Industrial de la Universidad Técnica de Ambato
-              es un profesional preparado para diseñar, gestionar,
-              implementar y optimizar sistemas productivos y de servicios.
-              Integra conocimientos relacionados con procesos,
-              producción, calidad, seguridad, logística y administración
-              de recursos, orientados al mejoramiento de la productividad
-              y competitividad de las organizaciones.
-
-            </p>
-
-          </div>
-
-
-          <div class="col-md-5 order-md-1">
-
-            <img
-              src="images (1).jpg"
-              alt="Carrera Industrial"
-              class="imagen-carrera featurette-image img-fluid mx-auto"
-              width="500"
-              height="500"
-            />
-
-          </div>
+          <img
+            src="images (1).jpg"
+            alt="Carrera Industrial"
+            class="imagen-carrera featurette-image img-fluid mx-auto"
+            width="500"
+            height="500"
+          >
 
         </div>
-
-
-
-        <!-- ROBÓTICA -->
-
-        <hr class="featurette-divider" />
-
-
-        <div
-          class="row featurette"
-          id="robotica"
-        >
-
-          <div class="col-md-7">
-
-            <h2
-              class="featurette-heading fw-normal lh-1"
-            >
-
-              Automatización y Robótica.
-
-              <span class="text-body-secondary">
-                Control y tecnología inteligente.
-              </span>
-
-            </h2>
-
-
-            <p class="lead">
-
-              El Ingeniero/a en Automatización y Robótica de la
-              Universidad Técnica de Ambato es un profesional con
-              competencias, habilidades y destrezas que garantizan el
-              dominio de algoritmos de control útiles para automatizar
-              los diferentes procesos en la industria fomentando la
-              investigación científica, partiendo de un modelo matemático
-              desde una visión constructivista, conectivista y
-              totalizadora, promoviendo la solución de problemas mediante
-              la integración de tecnologías inteligentes con la
-              creatividad, innovación y emprendimiento.
-
-            </p>
-
-
-            <p class="lead">
-
-              Coordina con actitud crítica y autocrítica el diseño,
-              implementación y evaluación de proyectos de automatización
-              y robótica, a fin de crear nuevos procedimientos técnicos
-              contribuyendo al desarrollo del sistema productivo del país,
-              respetando el pensamiento divergente.
-
-            </p>
-
-
-            <p class="lead">
-
-              Desarrolla técnicas de control industrial en sistemas,
-              procesos y productos para garantizar su funcionalidad
-              adecuada, validando previamente su funcionamiento mediante
-              el prototipado. El Ingeniero en Automatización y Robótica
-              valora el trabajo en equipo, demuestra su lealtad y
-              tolerancia, inculca actitudes de iniciativa y superación,
-              manifestando su práctica ética con responsabilidad social
-              y ambiental.
-
-            </p>
-
-          </div>
-
-
-          <div class="col-md-5">
-
-            <img
-              src="images (2).jpg"
-              alt="Automatización y Robótica"
-              class="imagen-carrera featurette-image img-fluid mx-auto"
-              width="500"
-              height="500"
-            />
-
-          </div>
-
-        </div>
-
-
-
-        <!-- BIBLIOTECA -->
-
-        <hr class="featurette-divider" />
-
-
-        <div
-          class="row featurette"
-          id="biblioteca"
-        >
-
-          <div class="col-md-7 order-md-2">
-
-            <h2
-              class="featurette-heading fw-normal lh-1"
-            >
-
-              Biblioteca.
-
-              <span class="text-body-secondary">
-                Libros físicos y digitales.
-              </span>
-
-            </h2>
-
-
-            <p class="lead">
-
-              Aquí podrás solicitar libros físicos y digitales
-              disponibles para apoyar tu formación académica,
-              investigación y aprendizaje.
-
-            </p>
-
-          </div>
-
-
-          <div class="col-md-5 order-md-1">
-
-            <img
-              src="image.png"
-              alt="Biblioteca"
-              class="imagen-carrera featurette-image img-fluid mx-auto"
-              width="500"
-              height="500"
-            />
-
-          </div>
-
-        </div>
-
-
-
-        <!-- PRÉSTAMO DE REDES -->
-
-        <hr class="featurette-divider" />
-
-
-        <div
-          class="row featurette"
-          id="redes"
-        >
-
-          <div class="col-md-7">
-
-            <h2
-              class="featurette-heading fw-normal lh-1"
-            >
-
-              Préstamo de Redes.
-
-              <span class="text-body-secondary">
-                Equipos y recursos de red.
-              </span>
-
-            </h2>
-
-
-            <p class="lead">
-
-              Aquí podrás solicitar el préstamo de equipos y recursos
-              relacionados con redes para el desarrollo de prácticas,
-              actividades académicas y proyectos de los estudiantes.
-
-            </p>
-
-          </div>
-
-
-          <div class="col-md-5">
-
-            <img
-              src="image copy.png"
-              alt="Préstamo de Redes"
-              class="imagen-carrera featurette-image img-fluid mx-auto"
-              width="500"
-              height="500"
-            />
-
-          </div>
-
-        </div>
-
-
-
-        <hr class="featurette-divider" />
-
 
       </div>
 
 
 
-      <!-- FOOTER -->
 
-      <footer class="container">
+      <!-- ROBÓTICA -->
 
-        <p class="float-end">
-
-          <a href="#">
-            Volver arriba
-          </a>
-
-        </p>
+      <hr class="featurette-divider">
 
 
-        <p>
+      <div
+        class="row featurette"
+        id="robotica"
+      >
 
-          Universidad Técnica de Ambato ·
-          Facultad de Ingeniería en Sistemas,
-          Electrónica e Industrial
+        <div class="col-md-7">
 
-        </p>
+          <h2
+            class="featurette-heading fw-normal lh-1"
+          >
 
-      </footer>
+            Automatización y Robótica.
 
+            <span class="text-body-secondary">
+              Control y tecnología inteligente.
+            </span>
 
-    </main>
-
-
-
-    <script
-      src="./assets/dist/js/bootstrap.bundle.min.js"
-    ></script>
+          </h2>
 
 
-  </body>
+          <p class="lead">
+
+            El Ingeniero/a en Automatización y Robótica de la
+            Universidad Técnica de Ambato es un profesional con
+            competencias, habilidades y destrezas que garantizan el
+            dominio de algoritmos de control útiles para automatizar
+            los diferentes procesos en la industria fomentando la
+            investigación científica, partiendo de un modelo matemático
+            desde una visión constructivista, conectivista y
+            totalizadora, promoviendo la solución de problemas mediante
+            la integración de tecnologías inteligentes con la
+            creatividad, innovación y emprendimiento.
+
+          </p>
+
+
+          <p class="lead">
+
+            Coordina con actitud crítica y autocrítica el diseño,
+            implementación y evaluación de proyectos de automatización
+            y robótica, a fin de crear nuevos procedimientos técnicos
+            contribuyendo al desarrollo del sistema productivo del país,
+            respetando el pensamiento divergente.
+
+          </p>
+
+
+          <p class="lead">
+
+            Desarrolla técnicas de control industrial en sistemas,
+            procesos y productos para garantizar su funcionalidad
+            adecuada, validando previamente su funcionamiento mediante
+            el prototipado. El Ingeniero en Automatización y Robótica
+            valora el trabajo en equipo, demuestra su lealtad y
+            tolerancia, inculca actitudes de iniciativa y superación,
+            manifestando su práctica ética con responsabilidad social
+            y ambiental.
+
+          </p>
+
+        </div>
+
+
+        <div class="col-md-5">
+
+          <img
+            src="images (2).jpg"
+            alt="Automatización y Robótica"
+            class="imagen-carrera featurette-image img-fluid mx-auto"
+            width="500"
+            height="500"
+          >
+
+        </div>
+
+      </div>
+
+
+
+
+      <!-- BIBLIOTECA -->
+
+      <hr class="featurette-divider">
+
+
+      <div
+        class="row featurette"
+        id="biblioteca"
+      >
+
+        <div class="col-md-7 order-md-2">
+
+          <h2
+            class="featurette-heading fw-normal lh-1"
+          >
+
+            Biblioteca.
+
+            <span class="text-body-secondary">
+              Libros físicos y digitales.
+            </span>
+
+          </h2>
+
+
+          <p class="lead">
+
+            Aquí podrás solicitar libros físicos y digitales
+            disponibles para apoyar tu formación académica,
+            investigación y aprendizaje.
+
+          </p>
+
+        </div>
+
+
+        <div class="col-md-5 order-md-1">
+
+          <img
+            src="image.png"
+            alt="Biblioteca"
+            class="imagen-carrera featurette-image img-fluid mx-auto"
+            width="500"
+            height="500"
+          >
+
+        </div>
+
+      </div>
+
+
+
+
+      <!-- PRÉSTAMO DE REDES -->
+
+      <hr class="featurette-divider">
+
+
+      <div
+        class="row featurette"
+        id="redes"
+      >
+
+        <div class="col-md-7">
+
+          <h2
+            class="featurette-heading fw-normal lh-1"
+          >
+
+            Préstamo de Redes.
+
+            <span class="text-body-secondary">
+              Equipos y recursos de red.
+            </span>
+
+          </h2>
+
+
+          <p class="lead">
+
+            Aquí podrás solicitar el préstamo de equipos y recursos
+            relacionados con redes para el desarrollo de prácticas,
+            actividades académicas y proyectos de los estudiantes.
+
+          </p>
+
+        </div>
+
+
+        <div class="col-md-5">
+
+          <img
+            src="image copy.png"
+            alt="Préstamo de Redes"
+            class="imagen-carrera featurette-image img-fluid mx-auto"
+            width="500"
+            height="500"
+          >
+
+        </div>
+
+      </div>
+
+
+
+
+      <!-- SECRETARÍA -->
+
+      <hr class="featurette-divider">
+
+
+      <div
+        class="row featurette"
+        id="secretaria"
+      >
+
+        <div class="col-md-7 order-md-2">
+
+          <h2
+            class="featurette-heading fw-normal lh-1"
+          >
+
+            Secretaría.
+
+            <span class="text-body-secondary">
+              Atención y servicios estudiantiles.
+            </span>
+
+          </h2>
+
+
+          <p class="lead">
+
+            En Secretaría podrás realizar consultas y solicitar
+            información relacionada con trámites académicos,
+            documentos, certificados y otros servicios destinados
+            a los estudiantes de la Facultad de Ingeniería en
+            Sistemas, Electrónica e Industrial.
+
+          </p>
+
+        </div>
+
+
+        <div class="col-md-5 order-md-1">
+
+          <img
+            src="image (3).jpg"
+            alt="Secretaría"
+            class="imagen-carrera featurette-image img-fluid mx-auto"
+            width="500"
+            height="500"
+          >
+
+        </div>
+
+      </div>
+
+
+
+
+      <!-- ASO FISEI -->
+
+      <hr class="featurette-divider">
+
+
+      <div
+        class="row featurette"
+        id="aso"
+      >
+
+        <div class="col-md-7">
+
+          <h2
+            class="featurette-heading fw-normal lh-1"
+          >
+
+            ASO FISEI.
+
+            <span class="text-body-secondary">
+              Espacio para los estudiantes.
+            </span>
+
+          </h2>
+
+
+          <p class="lead">
+
+            La ASO FISEI de la Universidad Técnica de Ambato
+            ofrece un espacio pensado para la integración,
+            entretenimiento y bienestar de los estudiantes
+            de la facultad.
+
+          </p>
+
+
+          <p class="lead">
+
+            En este espacio los estudiantes pueden encontrar
+            snacks, golosinas, bebidas, aguas y diferentes
+            productos para consumir durante sus jornadas
+            académicas.
+
+          </p>
+
+
+          <p class="lead">
+
+            Además, cuenta con diferentes alternativas de
+            entretenimiento y recreación, como juegos de
+            PlayStation y billar, permitiendo a los estudiantes
+            compartir con sus compañeros y disfrutar de un
+            momento de descanso entre clases.
+
+          </p>
+
+
+          <p class="lead">
+
+            La ASO FISEI constituye un punto de encuentro
+            estudiantil dentro de la facultad, brindando un
+            ambiente de convivencia, recreación y servicio
+            para la comunidad universitaria.
+
+          </p>
+
+        </div>
+
+
+        <div class="col-md-5">
+
+          <img
+            src="images (4).jpg"
+            alt="ASO FISEI"
+            class="imagen-carrera featurette-image img-fluid mx-auto"
+            width="500"
+            height="500"
+          >
+
+        </div>
+
+      </div>
+
+
+
+
+      <hr class="featurette-divider">
+
+
+    </div>
+
+
+
+
+    <!-- FOOTER -->
+
+    <footer class="container">
+
+      <p class="float-end">
+
+        <a href="#">
+          Volver arriba
+        </a>
+
+      </p>
+
+
+      <p>
+
+        Universidad Técnica de Ambato ·
+        Facultad de Ingeniería en Sistemas,
+        Electrónica e Industrial
+
+      </p>
+
+    </footer>
+
+
+  </main>
+
+
+
+
+  <script
+    src="./assets/dist/js/bootstrap.bundle.min.js"
+  >
+  </script>
+
+
+</body>
+
 </html>
