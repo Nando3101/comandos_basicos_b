@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-bs-theme="auto">
+<html lang="es" data-bs-theme="auto">
 
 <head>
 
@@ -7,21 +7,16 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <meta name="description" content="">
+  <meta name="description" content="FISEI - Universidad Técnica de Ambato">
 
   <meta
     name="author"
-    content="Mark Otto, Jacob Thornton, and Bootstrap contributors"
+    content="Universidad Técnica de Ambato"
   >
 
   <meta name="generator" content="Astro v5.13.2">
 
   <title>FISEI - Universidad Técnica de Ambato</title>
-
-  <link
-    rel="canonical"
-    href="https://getbootstrap.com/docs/5.3/examples/carousel/"
-  >
 
   <script src="./assets/js/color-modes.js"></script>
 
@@ -40,6 +35,7 @@
     rel="stylesheet"
   >
 
+
   <style>
 
     .bd-placeholder-img {
@@ -50,11 +46,15 @@
       user-select: none;
     }
 
+
     @media (min-width: 768px) {
+
       .bd-placeholder-img-lg {
         font-size: 3.5rem;
       }
+
     }
+
 
     .b-example-divider {
       width: 100%;
@@ -62,10 +62,12 @@
       background-color: #0000001a;
       border: solid rgba(0, 0, 0, 0.15);
       border-width: 1px 0;
+
       box-shadow:
         inset 0 0.5em 1.5em #0000001a,
         inset 0 0.125em 0.5em #00000026;
     }
+
 
     .b-example-vr {
       flex-shrink: 0;
@@ -73,10 +75,12 @@
       height: 100vh;
     }
 
+
     .bi {
       vertical-align: -0.125em;
       fill: currentColor;
     }
+
 
     .nav-scroller {
       position: relative;
@@ -84,6 +88,7 @@
       height: 2.75rem;
       overflow-y: hidden;
     }
+
 
     .nav-scroller .nav {
       display: flex;
@@ -96,7 +101,9 @@
       -webkit-overflow-scrolling: touch;
     }
 
+
     .btn-bd-primary {
+
       --bd-violet-bg: #712cf9;
       --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
 
@@ -116,18 +123,22 @@
       --bs-btn-active-border-color: #5a23c8;
     }
 
+
     .bd-mode-toggle {
       z-index: 1500;
     }
+
 
     .bd-mode-toggle .bi {
       width: 1em;
       height: 1em;
     }
 
+
     .bd-mode-toggle .dropdown-menu .active .bi {
       display: block !important;
     }
+
 
     .imagen-carrera {
       width: 100%;
@@ -143,19 +154,24 @@
 <body>
 
 
+  <!-- ICONOS -->
+
   <svg
     xmlns="http://www.w3.org/2000/svg"
     class="d-none"
   >
 
+
     <symbol
       id="check2"
       viewBox="0 0 16 16"
     >
+
       <path
         d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"
       >
       </path>
+
     </symbol>
 
 
@@ -163,10 +179,12 @@
       id="circle-half"
       viewBox="0 0 16 16"
     >
+
       <path
         d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"
       >
       </path>
+
     </symbol>
 
 
@@ -174,10 +192,12 @@
       id="moon-stars-fill"
       viewBox="0 0 16 16"
     >
+
       <path
         d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"
       >
       </path>
+
     </symbol>
 
 
@@ -185,10 +205,12 @@
       id="sun-fill"
       viewBox="0 0 16 16"
     >
+
       <path
         d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"
       >
       </path>
+
     </symbol>
 
   </svg>
@@ -214,14 +236,19 @@
         class="bi my-1 theme-icon-active"
         aria-hidden="true"
       >
+
         <use href="#circle-half"></use>
+
       </svg>
+
 
       <span
         class="visually-hidden"
         id="bd-theme-text"
       >
+
         Toggle theme
+
       </span>
 
     </button>
@@ -232,7 +259,9 @@
       aria-labelledby="bd-theme-text"
     >
 
+
       <li>
+
         <button
           type="button"
           class="dropdown-item d-flex align-items-center"
@@ -243,16 +272,20 @@
             class="bi me-2 opacity-50"
             aria-hidden="true"
           >
+
             <use href="#sun-fill"></use>
+
           </svg>
 
           Light
 
         </button>
+
       </li>
 
 
       <li>
+
         <button
           type="button"
           class="dropdown-item d-flex align-items-center"
@@ -263,16 +296,20 @@
             class="bi me-2 opacity-50"
             aria-hidden="true"
           >
+
             <use href="#moon-stars-fill"></use>
+
           </svg>
 
           Dark
 
         </button>
+
       </li>
 
 
       <li>
+
         <button
           type="button"
           class="dropdown-item d-flex align-items-center active"
@@ -283,12 +320,15 @@
             class="bi me-2 opacity-50"
             aria-hidden="true"
           >
+
             <use href="#circle-half"></use>
+
           </svg>
 
           Auto
 
         </button>
+
       </li>
 
     </ul>
@@ -301,17 +341,22 @@
 
   <header data-bs-theme="dark">
 
+
     <nav
       class="navbar navbar-expand-md navbar-dark fixed-top bg-dark"
     >
 
+
       <div class="container-fluid">
+
 
         <a
           class="navbar-brand"
           href="#"
         >
+
           FISEI
+
         </a>
 
 
@@ -335,88 +380,123 @@
           id="navbarCollapse"
         >
 
+
           <ul
             class="navbar-nav me-auto mb-2 mb-md-0"
           >
 
+
             <li class="nav-item">
+
               <a
                 class="nav-link active"
                 href="#"
               >
+
                 Inicio
+
               </a>
+
             </li>
 
 
             <li class="nav-item">
+
               <a
                 class="nav-link"
                 href="#software"
               >
+
                 Software
+
               </a>
+
             </li>
 
 
             <li class="nav-item">
+
               <a
                 class="nav-link"
                 href="#industrial"
               >
+
                 Industrial
+
               </a>
+
             </li>
 
 
             <li class="nav-item">
+
               <a
                 class="nav-link"
                 href="#robotica"
               >
+
                 Robótica
+
               </a>
+
             </li>
 
 
             <li class="nav-item">
+
               <a
                 class="nav-link"
                 href="#biblioteca"
               >
+
                 Biblioteca
+
               </a>
+
             </li>
 
 
             <li class="nav-item">
+
               <a
                 class="nav-link"
                 href="#redes"
               >
+
                 Préstamo de Redes
+
               </a>
+
             </li>
 
 
             <li class="nav-item">
+
               <a
                 class="nav-link"
                 href="#secretaria"
               >
+
                 Secretaría
+
               </a>
+
             </li>
 
 
             <li class="nav-item">
+
               <a
                 class="nav-link"
                 href="#aso"
               >
+
                 ASO FISEI
+
               </a>
+
             </li>
+
 
           </ul>
 
@@ -433,20 +513,27 @@
               aria-label="Buscar"
             >
 
+
             <button
               class="btn btn-outline-success"
               type="submit"
             >
+
               Buscar
+
             </button>
 
           </form>
 
+
         </div>
+
 
       </div>
 
+
     </nav>
+
 
   </header>
 
@@ -466,6 +553,7 @@
 
 
       <div class="carousel-indicators">
+
 
         <button
           type="button"
@@ -495,6 +583,7 @@
         >
         </button>
 
+
       </div>
 
 
@@ -502,9 +591,11 @@
       <div class="carousel-inner">
 
 
+
         <!-- SLIDE 1 -->
 
         <div class="carousel-item active">
+
 
           <svg
             aria-hidden="true"
@@ -527,15 +618,23 @@
 
           <div class="container">
 
+
             <div class="carousel-caption text-start">
 
+
               <h1>
+
                 Facultad de Ingeniería en Sistemas, Electrónica e Industrial
+
               </h1>
 
+
               <p class="opacity-75">
+
                 Universidad Técnica de Ambato
+
               </p>
+
 
               <p>
 
@@ -543,14 +642,19 @@
                   class="btn btn-lg btn-primary"
                   href="#software"
                 >
+
                   Conocer las carreras
+
                 </a>
 
               </p>
 
+
             </div>
 
+
           </div>
+
 
         </div>
 
@@ -560,6 +664,7 @@
 
         <div class="carousel-item">
 
+
           <svg
             aria-hidden="true"
             class="bd-placeholder-img"
@@ -581,16 +686,24 @@
 
           <div class="container">
 
+
             <div class="carousel-caption">
 
+
               <h1>
+
                 FISEI
+
               </h1>
 
+
               <p>
+
                 Formación académica en tecnología,
                 ingeniería, innovación y desarrollo.
+
               </p>
+
 
               <p>
 
@@ -598,14 +711,19 @@
                   class="btn btn-lg btn-primary"
                   href="#industrial"
                 >
+
                   Ver más
+
                 </a>
 
               </p>
 
+
             </div>
 
+
           </div>
+
 
         </div>
 
@@ -615,6 +733,7 @@
 
         <div class="carousel-item">
 
+
           <svg
             aria-hidden="true"
             class="bd-placeholder-img"
@@ -636,16 +755,24 @@
 
           <div class="container">
 
+
             <div class="carousel-caption text-end">
 
+
               <h1>
+
                 Innovación y Tecnología
+
               </h1>
 
+
               <p>
+
                 Carreras orientadas al desarrollo tecnológico
                 y productivo del país.
+
               </p>
+
 
               <p>
 
@@ -653,16 +780,22 @@
                   class="btn btn-lg btn-primary"
                   href="#robotica"
                 >
+
                   Conocer más
+
                 </a>
 
               </p>
 
+
             </div>
+
 
           </div>
 
+
         </div>
+
 
       </div>
 
@@ -681,9 +814,13 @@
         >
         </span>
 
+
         <span class="visually-hidden">
+
           Previous
+
         </span>
+
 
       </button>
 
@@ -702,11 +839,16 @@
         >
         </span>
 
+
         <span class="visually-hidden">
+
           Next
+
         </span>
 
+
       </button>
+
 
     </div>
 
@@ -727,7 +869,9 @@
         id="software"
       >
 
+
         <div class="col-md-7">
+
 
           <h2
             class="featurette-heading fw-normal lh-1"
@@ -736,7 +880,9 @@
             Carrera de Software.
 
             <span class="text-body-secondary">
+
               Tecnología e innovación.
+
             </span>
 
           </h2>
@@ -755,10 +901,13 @@
 
           </p>
 
+
         </div>
 
 
+
         <div class="col-md-5">
+
 
           <img
             src="images.jpg"
@@ -768,10 +917,11 @@
             height="500"
           >
 
+
         </div>
 
-      </div>
 
+      </div>
 
 
 
@@ -785,7 +935,9 @@
         id="industrial"
       >
 
+
         <div class="col-md-7 order-md-2">
+
 
           <h2
             class="featurette-heading fw-normal lh-1"
@@ -794,7 +946,9 @@
             Carrera Industrial.
 
             <span class="text-body-secondary">
+
               Producción y optimización.
+
             </span>
 
           </h2>
@@ -812,10 +966,13 @@
 
           </p>
 
+
         </div>
 
 
+
         <div class="col-md-5 order-md-1">
+
 
           <img
             src="images (1).jpg"
@@ -825,10 +982,11 @@
             height="500"
           >
 
+
         </div>
 
-      </div>
 
+      </div>
 
 
 
@@ -842,7 +1000,9 @@
         id="robotica"
       >
 
+
         <div class="col-md-7">
+
 
           <h2
             class="featurette-heading fw-normal lh-1"
@@ -851,7 +1011,9 @@
             Automatización y Robótica.
 
             <span class="text-body-secondary">
+
               Control y tecnología inteligente.
+
             </span>
 
           </h2>
@@ -897,10 +1059,13 @@
 
           </p>
 
+
         </div>
 
 
+
         <div class="col-md-5">
+
 
           <img
             src="images (2).jpg"
@@ -910,10 +1075,11 @@
             height="500"
           >
 
+
         </div>
 
-      </div>
 
+      </div>
 
 
 
@@ -927,7 +1093,9 @@
         id="biblioteca"
       >
 
+
         <div class="col-md-7 order-md-2">
+
 
           <h2
             class="featurette-heading fw-normal lh-1"
@@ -936,7 +1104,9 @@
             Biblioteca.
 
             <span class="text-body-secondary">
+
               Libros físicos y digitales.
+
             </span>
 
           </h2>
@@ -950,10 +1120,13 @@
 
           </p>
 
+
         </div>
 
 
+
         <div class="col-md-5 order-md-1">
+
 
           <img
             src="image.png"
@@ -963,10 +1136,11 @@
             height="500"
           >
 
+
         </div>
 
-      </div>
 
+      </div>
 
 
 
@@ -980,7 +1154,9 @@
         id="redes"
       >
 
+
         <div class="col-md-7">
+
 
           <h2
             class="featurette-heading fw-normal lh-1"
@@ -989,7 +1165,9 @@
             Préstamo de Redes.
 
             <span class="text-body-secondary">
+
               Equipos y recursos de red.
+
             </span>
 
           </h2>
@@ -1003,10 +1181,13 @@
 
           </p>
 
+
         </div>
 
 
+
         <div class="col-md-5">
+
 
           <img
             src="image copy.png"
@@ -1016,10 +1197,11 @@
             height="500"
           >
 
+
         </div>
 
-      </div>
 
+      </div>
 
 
 
@@ -1033,7 +1215,9 @@
         id="secretaria"
       >
 
+
         <div class="col-md-7 order-md-2">
+
 
           <h2
             class="featurette-heading fw-normal lh-1"
@@ -1042,7 +1226,9 @@
             Secretaría.
 
             <span class="text-body-secondary">
+
               Atención y servicios estudiantiles.
+
             </span>
 
           </h2>
@@ -1058,23 +1244,27 @@
 
           </p>
 
+
         </div>
+
 
 
         <div class="col-md-5 order-md-1">
 
+
           <img
-            src="image (3).jpg"
+            src="images (3).jpg"
             alt="Secretaría"
             class="imagen-carrera featurette-image img-fluid mx-auto"
             width="500"
             height="500"
           >
 
+
         </div>
 
-      </div>
 
+      </div>
 
 
 
@@ -1088,7 +1278,9 @@
         id="aso"
       >
 
+
         <div class="col-md-7">
+
 
           <h2
             class="featurette-heading fw-normal lh-1"
@@ -1097,7 +1289,9 @@
             ASO FISEI.
 
             <span class="text-body-secondary">
+
               Espacio para los estudiantes.
+
             </span>
 
           </h2>
@@ -1143,10 +1337,13 @@
 
           </p>
 
+
         </div>
 
 
+
         <div class="col-md-5">
+
 
           <img
             src="images (4).jpg"
@@ -1156,10 +1353,11 @@
             height="500"
           >
 
+
         </div>
 
-      </div>
 
+      </div>
 
 
 
@@ -1170,15 +1368,17 @@
 
 
 
-
     <!-- FOOTER -->
 
     <footer class="container">
 
+
       <p class="float-end">
 
         <a href="#">
+
           Volver arriba
+
         </a>
 
       </p>
@@ -1192,11 +1392,11 @@
 
       </p>
 
+
     </footer>
 
 
   </main>
-
 
 
 
